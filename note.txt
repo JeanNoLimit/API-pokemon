@@ -1,0 +1,11 @@
+lien vers les images : 
+
+
+https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png
+
+
+lien vers l'api : 
+
+
+https://pokeapi.co/
+
