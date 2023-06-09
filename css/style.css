@@ -1,3 +1,5 @@
+
+/*************Formulaire ************/
 .formContainer {
     width: 400px;
     height: 100px;
@@ -22,6 +24,10 @@ form {
     margin: 10px;
 }
 
+
+/*************Affichage des pokemons*********************/
+
+
 .conteneurAPokemons{
     margin: 50px 100px;
     gap: 5px;
@@ -39,6 +45,10 @@ article{
     width: 150px;
     height: 150px;
     border: solid 1px black;
+    border-radius: 5px;
     text-align: center;
 }
 
+.nomPokemon {
+    font-weight: 600;
+}
