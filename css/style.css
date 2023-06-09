@@ -48,9 +48,15 @@ article{
     text-align: center;
 }
 
+.numPokemon {
+    font-size : 0.8em;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
 .nomPokemon {
     font-weight: 600;
-    margin-bottom: 2px;
+    margin: 0;
 }
 
 .type {
