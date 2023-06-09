@@ -24,8 +24,12 @@ function genererPokemon(nbPokemon) {
 
             // Création d'une balise qui contiendra le nom du pokemon
             const nomPokemon = document.createElement("p");
-            // Contenu de la balise
-            nomPokemon.innerText= data.results[i].name
+            nomPokemon.className = "nomPokemon";
+
+            // Contenu de la balise. On place le nom du pokemon dansu ne variable tmp pour afficher la première lettre en majuscule.
+            var nomTmp =  data.results[i].name
+            console.log(nomTmp)
+            nomPokemon.innerText= nomTmp[0].toUpperCase() + nomTmp.slice(1);
 
             //Idem pour l'image
             const imgPokemon = document.createElement("img");
