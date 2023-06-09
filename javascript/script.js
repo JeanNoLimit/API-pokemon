@@ -1,8 +1,6 @@
 const form = document.querySelector("form");
 const nbPokemon = document.querySelector(".nbPokemonsJs");
 
-
-
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     genererPokemon(nbPokemon);
@@ -22,21 +20,28 @@ function genererPokemon(nbPokemon) {
         result.innerText= null;
 
         for(let i=0;i<nbPokemon.value;i++){
-
-          
-
+            
+            
             // création d'une balise dédiée à recevoir les infos 
             const pokemonElement = document.createElement("article");
-
+            
             // Création d'une balise qui contiendra le nom du pokemon
             const nomPokemon = document.createElement("p");
             nomPokemon.className = "nomPokemon";
             // Contenu de la balise. On place le nom du pokemon dansu ne variable tmp pour afficher la première lettre en majuscule.
             var nomTmp =  data.results[i].name
             nomPokemon.innerText= nomTmp[0].toUpperCase() + nomTmp.slice(1);
-
-
-
+            
+           //On réalise une Deuxième requête pour récupérer les types des pokemons
+           let typePokemon = document.createElement("p");
+           typePokemon.className = "type";
+            fetch(data.results[i].url)
+            .then((response)=> response.json())
+            .then((data2)=>{
+                // console.log(data2);
+               typePokemon.innerText = data2.types[0].type.name;
+            //   console.log(typePokemon);
+            })
 
             //Idem pour l'image
             const imgPokemon = document.createElement("img");
@@ -45,6 +50,7 @@ function genererPokemon(nbPokemon) {
 
             result.appendChild(pokemonElement);
             pokemonElement.appendChild(nomPokemon);
+            pokemonElement.appendChild(typePokemon);
             pokemonElement.appendChild(imgPokemon);
 
         }
