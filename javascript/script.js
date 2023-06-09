@@ -38,8 +38,10 @@ function genererPokemon(nbPokemon) {
             fetch(data.results[i].url)
             .then((response)=> response.json())
             .then((data2)=>{
-                // console.log(data2);
-               typePokemon.innerText = data2.types[0].type.name;
+                console.log(data2);
+               type = data2.types[0].type.name;
+               typePokemon.innerText = type;
+               pokemonElement.className = type;
             //   console.log(typePokemon);
             })
 
